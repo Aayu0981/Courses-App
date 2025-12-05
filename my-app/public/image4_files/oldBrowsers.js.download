@@ -1,0 +1,24 @@
+(function unwrapNoScript() {
+  var hasClass = function (el, className) {
+    if (el.classList) {
+      return el.classList.contains(className);
+    } else {
+      return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+    }
+  };
+
+  var noscript = document.getElementsByTagName('noscript');
+
+  for (var i = 0; i < noscript.length; i++) {
+    var noscriptTag = noscript[i];
+
+    if (!hasClass(noscriptTag, 'js-do-not-unwrap')) {
+      var div = document.createElement('div');
+      div.innerHTML = noscriptTag.textContent || noscriptTag.innerHTML;
+
+      while (div.firstChild) {
+        noscriptTag.parentNode.insertBefore(div.firstChild, noscriptTag);
+      }
+    }
+  }
+})();

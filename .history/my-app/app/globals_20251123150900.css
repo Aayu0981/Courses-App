@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* body, #root {
+  @apply bg-linear-to-r from-purple-100 via-pink-200 to-orange-100 h-screen w-full;
+} */
+
+
+@layer utilities {
+  .underline-center-hover {
+    position: relative;
+    display: inline-block; /* ← MOST IMPORTANT FIX */
+  }
+
+  .underline-center-hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    height: 3px;
+    width: 0;
+    background-image: linear-gradient(to right, #db2777, #fda4af); /* pink-600 → red-300 */
+    transition: all 0.3s ease;
+  }
+
+  .underline-center-hover:hover::after {
+    width: 100%;
+  }
+}
+.buttons {
+  
+  className="text-lg text-white py-[8px] px-[16px] rounded-xl font-stretch-normal bg-pink-600 hover:bg-blue-600  font-sans mt-10
+}
+
+
+
+

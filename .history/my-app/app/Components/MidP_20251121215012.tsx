@@ -1,0 +1,139 @@
+// components/HeroSection.js
+import React from 'react';
+import { StarIcon } from '@heroicons/react/24/solid'; 
+import { PiBookOpenTextLight } from "react-icons/pi";
+import { BsHeartPulse } from "react-icons/bs";
+import { PiGraduationCapLight } from "react-icons/pi";
+import { MdTouchApp } from "react-icons/md";
+import { RiMentalHealthLine } from "react-icons/ri";
+import { MdOutlineEngineering } from "react-icons/md";
+
+
+
+
+
+
+import ColorBox from './ColorDiv';
+
+export default function HeroSection() {
+  return (<>
+  
+    <section className="bg-gradient-to-r from-purple-100 via-pink-200 to-orange-100 min-h-screen w-full  mt-10">
+      <div className="container mx-auto px-4 ">
+        
+      
+        <div className="grid md:grid-cols-2 gap-2 items-start">
+          
+          {/* (Text and Rating) */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-pink-600 leading-tight my-20">
+              Accelerate<br/>
+             <p className='text-blue-600 text-4xl md:text-5xl font-bold mb-0'> your learning</p>
+            </h1>
+            
+            
+            <div  className=' -mt-15'>
+              <p className="text-4xl font-semibold  ">4.57 average rating</p>
+              
+              {/* star */}
+              <div className="flex items-center mt-2">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon 
+                    key={i} 
+                    className={`w-5 h-5 ${i < 4.5 ? 'text-pink-600' : 'text-gray-300'}`} 
+                   
+                  />
+                ))}
+                <span className="ml-2 text-futurelearn-purple text-sm">1,97,142 learner reviews</span>
+              </div>
+              
+              <p className="text-xs mt-1 text-gray-500">Powered by **yotpo**.</p>
+            </div>
+          </div>
+
+          {/* right coolum */}
+          <div className="pt-4 md:pt-0 my-50">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Take your career further. Discover 1400+ courses 
+              from top universities and master in-demand skills 
+              across marketing, tech, business, cybersecurity and 
+              more.
+            </p>
+            
+            {/* buttons*/}
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+              <button className="bg-pink-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg transition duration-300">
+                Get Unlimited learning
+              </button>
+              <button className="bg-white border border-gray-400 hover:text-blue-700 hover:border-blue-700 text-futurelearn-purple font-semibold py-3 px-6 rounded-md transition duration-300">
+                Explore courses
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    {/* Next Paage */}
+
+<div>
+    
+    <div className=' bg-white rounded-[50px]   h-screen w-full -mt-10 '>
+
+        <div className='text-center py-5'>
+        <span className='text-2xl font-semibold m-5' >Explore top subjects</span> 
+         </div>
+
+
+
+         <div className='flex gap-15 font-16px m-5'>
+         <div className='flex gap-2 '>
+            <PiBookOpenTextLight className='text-pink-600 h-8 w-8 '  />
+            <p>Business & Managment</p>
+         </div>
+
+
+         <div className='flex gap-2 px-'>
+            <BsHeartPulse className='text-pink-600 h-8 w-8 '  />
+            <p>Healthcare & Medicine</p>
+         </div>
+
+
+         <div className='flex gap-2 '>
+            <PiGraduationCapLight  className='text-pink-600 h-8 w-8 '  />
+            <p>Teaching</p>
+         </div>
+
+
+
+         <div className='flex gap-2 '>
+           <MdTouchApp  className='text-pink-600 h-7 w-7 '  />
+            <p>Tech & IT</p>
+         </div>
+
+
+
+         <div className='flex gap-2 '>
+            <RiMentalHealthLine className='text-pink-600 h-7 w-7 '  />
+            <p>Psychology & Mental Health</p>
+         </div>
+
+
+
+         <div className='flex gap-2 '>
+           <MdOutlineEngineering className='text-pink-600 h-6 w-7  '  />
+            <p>Science, Engineering & Math</p>
+         </div>
+        </div>
+    
+    
+    </div></div>
+    </section>
+
+    <div>
+   
+
+    </div>
+
+    </>
+  );
+}

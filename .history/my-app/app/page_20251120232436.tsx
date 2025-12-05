@@ -1,0 +1,32 @@
+'use client'
+import Image from "next/image"
+import { CiSearch } from "react-icons/ci";
+
+
+export default function Home(){
+  return(
+
+<nav className="m-5 w-full bg-white shadow-sm sticky  flex">
+
+  {/* Left logo */}
+<div className="flex mx-auto px-6 py-4 gap-4 justify-between" >
+   <Image src="/F2.png" alt="IconeImage" height={30} width={90}/>
+
+ 
+  <p>All Degrees</p>
+  <p>subjects</p>
+  <p>Qualification</p>
+  <p>Resource</p>
+</div>
+
+{/* right part of nav */}
+<div  className="flext gap-4">
+  <CiSearch/>
+  <button>Enquare</button>
+</div>
+</nav>
+
+ 
+ )
+
+}
